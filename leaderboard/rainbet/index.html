@@ -448,11 +448,11 @@ function updateCountdown() {
   const el = document.getElementById("countdown");
   const now = new Date();
 
-  // Determine next 11th UTC 00:00
+  // Determine next 26th UTC 00:00
   let targetMonth = now.getUTCMonth();
   let targetYear = now.getUTCFullYear();
 
-  if (now.getUTCDate() >= 11) {
+  if (now.getUTCDate() >= 26) {
     targetMonth += 1;
     if (targetMonth > 11) {
       targetMonth = 0;
@@ -460,7 +460,7 @@ function updateCountdown() {
     }
   }
 
-  const target = new Date(Date.UTC(targetYear, targetMonth, 11, 0, 0, 0));
+  const target = new Date(Date.UTC(targetYear, targetMonth, 26, 0, 0, 0));
   const diff = target - now;
 
   if (diff <= 0) {
@@ -478,6 +478,7 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
+
 
 
 async function loadLeaderboard() {
